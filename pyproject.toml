@@ -1,0 +1,22 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "mcfolio"
+version = "0.0.1"
+authors = [
+  { name="Bryce J. Bjork", email="bryce.j.bjork@gmail.com" },
+]
+description = "Monte-carlo portfolio simulator"
+readme = "README.md"
+requires-python = ">=3.7"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+
+[project.urls]
+"Homepage" = "https://github.com/brycebjork/mcfolio"
+"Bug Tracker" = "https://github.com/brycebjork/mcfolio/issues"
