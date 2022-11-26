@@ -38,6 +38,15 @@ class BuyAsset:
         accounts[self.assetname] = self.newasset(variables)
         return (t, accounts)
 
+class Paycheck:
+    def __init__(self, toaccount, value):
+        self.toaccount = toaccount
+        self.value = value
+    def apply(self, lastaccounttuple, variables):
+        t, accounts = copy.deepcopy(lastaccounttuple)
+        accounts[self.toaccount].deposit(self.value)
+        return (t, accounts)
+
 class Transfer:
     def __init__(self, fromaccount, toaccount, value):
         self.fromaccount = fromaccount

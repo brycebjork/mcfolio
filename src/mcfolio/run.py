@@ -16,9 +16,13 @@ def run(portfolios, variables={}, trials=1):
 
 def run_portfolio(portfolio, variables):
     name, accounts, ops = copy.deepcopy(portfolio)
+    sortedops = sorted(
+        ops,
+        key= lambda item: item[0]
+    )
     r = [(0, {k:v(variables) for k,v in accounts.items()})]
-    currtime = ops[0][0]
-    for op in ops:
+    currtime = sortedops[0][0]
+    for op in sortedops:
         dt = op[0] - currtime
         if dt < 0:
             raise ValueError()
